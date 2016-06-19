@@ -1,2 +1,5 @@
 # Toxic-OS-Tools
-Toxic Build script
+
+```bash
+    $ . Toxic-OS/build.sh <device>
+```
