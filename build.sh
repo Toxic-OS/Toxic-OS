@@ -36,11 +36,10 @@ clear
 tput setaf 3
         sleep 1
         echo
-        echo Downloading Toxic-OS Sources
+        echo Updating sources
         echo
 	sleep 2
 tput setaf 2
-        repo init -u git://github.com/Toxic-OS/platform_manifest.git -b mm
         repo sync --force-sync -f --force-broken -c --no-tags
 tput setaf 3
         sleep 3
