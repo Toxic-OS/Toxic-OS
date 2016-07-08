@@ -14,7 +14,6 @@
 #
 # Please maintain this if you use this script or any part of it
 #
-VERSION="v0.1"
 
 normal='tput sgr0'              # White
 red='tput setaf 1'              # Red
@@ -33,7 +32,7 @@ bldvlt=${txtbld}$(tput setaf 5) # Bold Violet
 bldcya=${txtbld}$(tput setaf 6) # Bold Cyan
 bldwht=${txtbld}$(tput setaf 7) # Bold White
 clear
-        echo -e "${bldwht}           Toxic-OS BuildScript  "
+        echo -e "${bldwht}          Welcome 2 Toxic-OS   "
 tput setaf 3
         sleep 1
         echo
