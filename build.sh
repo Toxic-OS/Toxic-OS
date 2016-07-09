@@ -35,7 +35,7 @@ clear
 
 start=$(date +'%s')
 
-        echo -e "${bldwht}          Welcome 2 Toxic-OS   "
+        echo -e "${bldwht}  Welcome 2 Toxic-OS   "
 tput setaf 3
         sleep 1
         echo
