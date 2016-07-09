@@ -69,8 +69,9 @@ tput setaf 2
 	logfile="$device-$(date +%Y%m%d).log"
 	lunch toxic_$device-userdebug && mka bacon 2>&1 | tee $logfile
 	if [ $? -eq 0 ]; then
+	tput setaf 2
 	printf "Build Suceeded, grab your zip at Out dir \nBuild log is at ${logfile} incase you need it\n";
 	else
-	printf "Build failed, check the log at ${logfile}\n";
+	printf "${bldred} Build failed, check the log at ${logfile}\n";
 	exit 1;
 	fi
