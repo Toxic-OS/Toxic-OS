@@ -35,46 +35,44 @@ clear
 
 start=$(date +'%s')
 
-        echo -e "${bldwht}  Welcome 2 Toxic-OS   "
+     echo -e "${bldred}       _______        _         ____   _____  "
+        echo -e "${bldred}   |__   __|      (_)       / __ \ / ____| "
+        echo -e "${bldred}      | | _____  ___  ___  | |  | | (___   "
+        echo -e "${bldred}      | |/ _ \ \/ / |/ __| | |  | |\___ \  "
+        echo -e "${bldred}      | | (_) >  <| | (__  | |__| |____) | "
+        echo -e "${bldred}      |_|\___/_/\_\_|\___|  \____/|_____/  "
+        echo -e "${bldcya}                                           "
+        echo -e "${bldcya}            Building Toxic OS       "
 tput setaf 3
-        sleep 1
-        echo
-        echo Updating sources
-        echo
+    sleep 1
+    echo
+    echo Setting up Build Environment...
+    echo
 	sleep 2
 tput setaf 2
-        repo sync --force-sync -f --force-broken -c --no-tags
-tput setaf 3
-        sleep 3
-        echo
-        echo Setting up Build Environment...
-        echo
-	sleep 4
-tput setaf 2
-        . build/envsetup.sh
-        make clean
+	source build/envsetup.sh
 tput setaf 3
 	echo  
 	if [ ! $1 ];
 	then
-	echo What is your device code name? If its not listed make sure u have synced ur device tree.
+	echo What is your device code name?
 	tput setaf 4
 	read device
 	else
 	device=$1
 	fi
 tput setaf 3
-	echo -e "Toxic-OS Will start build for ${bldred} ${device}"
+	echo -e "You have chosen to build Toxic OS for ${bldred} ${device}"
 	echo  
-	echo -e "${bldvlt}Building Toxic!"
+	echo -e "${bldvlt}Building ToxicOS now! for $device"
 	echo  
-	sleep 5
+	sleep 3
 tput setaf 2
 	logfile="$device-$(date +%Y%m%d).log"
-	breakfast $device && time brunch &device 2>&1 | tee $logfile
+	lunch toxic_$device-userdebug && mka bacon 2>&1 | tee $logfile
 	if [ $? -eq 0 ]; then
-	printf "Congrats, Build completed in $(($(date +'%s') - $start)) seconds" grab your zip at Out dir \nBuild log is at ${logfile} incase you need it\n";
+	printf "Build Suceeded, grab your zip at Out dir \nBuild log is at ${logfile} incase you need it\n";
 	else
-	printf "Build failed $(($(date +'%s') - $start)) seconds", check the log at ${logfile}\n";
+	printf "Build failed, check the log at ${logfile}\n";
 	exit 1;
 	fi
