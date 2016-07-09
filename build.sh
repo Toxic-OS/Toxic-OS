@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2016, Toxic-OS AdityaUpreti <aupreti72@gmail.com>
+# Copyright (C) 2016, ResurrectionRemix and Toxic OS
 #
 # Script based on ResurrectionRemix
 # This software is licensed under the terms of the GNU General Public
