@@ -32,6 +32,9 @@ bldvlt=${txtbld}$(tput setaf 5) # Bold Violet
 bldcya=${txtbld}$(tput setaf 6) # Bold Cyan
 bldwht=${txtbld}$(tput setaf 7) # Bold White
 clear
+
+start=$(date +'%s')
+
         echo -e "${bldwht}          Welcome 2 Toxic-OS   "
 tput setaf 3
         sleep 1
@@ -70,8 +73,8 @@ tput setaf 2
 	logfile="$device-$(date +%Y%m%d).log"
 	breakfast $device && time brunch &device 2>&1 | tee $logfile
 	if [ $? -eq 0 ]; then
-	printf "Congrats, Build completed grab your zip at Out dir \nBuild log is at ${logfile} incase you need it\n";
+	printf "Congrats, Build completed in $(($(date +'%s') - $start)) seconds" grab your zip at Out dir \nBuild log is at ${logfile} incase you need it\n";
 	else
-	printf "Build failed, check the log at ${logfile}\n";
+	printf "Build failed $(($(date +'%s') - $start)) seconds", check the log at ${logfile}\n";
 	exit 1;
 	fi
