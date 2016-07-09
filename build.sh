@@ -33,9 +33,7 @@ bldcya=${txtbld}$(tput setaf 6) # Bold Cyan
 bldwht=${txtbld}$(tput setaf 7) # Bold White
 clear
 
-start=$(date +'%s')
-
-     echo -e "${bldred}       _______        _         ____   _____  "
+        echo -e "${bldred}    _______        _         ____   _____  "
         echo -e "${bldred}   |__   __|      (_)       / __ \ / ____| "
         echo -e "${bldred}      | | _____  ___  ___  | |  | | (___   "
         echo -e "${bldred}      | |/ _ \ \/ / |/ __| | |  | |\___ \  "
